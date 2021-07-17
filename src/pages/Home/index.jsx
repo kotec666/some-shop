@@ -4,22 +4,15 @@ import s from "./Content.module.css"
 import Card from "../../components/Card"
 import Pagination from "../../components/Pagination"
 import AddItemToBase from "../../components/AddItemToBase"
-import {useSelector, useDispatch} from "react-redux"
-import {fetchItems} from "../../redux/actions/items"
-import Loader from "../../components/Loader";
+import {useSelector} from "react-redux"
+import Loader from "../../components/Loader"
 
 
 const Home = () => {
-    const dispatch = useDispatch()
     const { role } = useSelector( state => state.role)
     const { items } = useSelector( state => state.items)
-
     const {isLoaded} = useSelector( state => state.items)
 
-
-    React.useEffect(() => {
-        dispatch(fetchItems())
-    }, [])
 
     return (
         <div>

@@ -1,29 +1,23 @@
 const initialState = {
     items: [],
     isLoaded: false,
-    isAdded: false
+
 }
 
 
-const items = (state = initialState, action) => {
+const cart = (state = initialState, action) => {
     switch (action.type) {
-        case 'SET_ITEMS':
+        case 'SET_CART_ITEMS':
             return {
                 ...state,
                 items: action.payload,
                 isLoaded: true,
             }
 
-        case 'SET_LOADED':
+        case 'SET_CART_LOADED':
             return {
                 ...state,
                 isLoaded: action.payload,
-            }
-
-        case 'IS_ITEM_ADDED':
-            return {
-                ...state,
-                isAdded: ''
             }
 
         default:
@@ -31,4 +25,4 @@ const items = (state = initialState, action) => {
     }
 };
 
-export default items
+export default cart

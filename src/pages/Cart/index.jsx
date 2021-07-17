@@ -2,16 +2,32 @@ import React from 'react'
 
 import s from "./Content.module.css"
 import Card from "../../components/Card"
+import {useDispatch, useSelector} from "react-redux"
+import {fetchCartItems} from "../../redux/actions/cart"
+import Loader from "../../components/Loader";
 
 
 
-const Home = () => {
+const Cart = () => {
+    const dispatch = useDispatch()
+    const { items: cartItems}  = useSelector( state => state.cart)
+    const {isLoaded} = useSelector( state => state.cart)
+
+
+
+    React.useEffect(() => {
+        dispatch(fetchCartItems())
+    }, [])
     return (
         <div>
             <div className={s.contentWrapper}>
                 <h1>Корзина</h1>
                 <div className={s.cardWrapper}>
-                    <Card/>
+                    {isLoaded
+                        ? cartItems.map((obj) => (<Card key={obj.id} {...obj} />))
+                        : Array(10)
+                            .fill(0)
+                            .map((_, index) => <Loader key={index} />)}
                 </div>
                 <div className={s.content}>
                     <button className={s.buyBtn}>Купить</button>
@@ -21,4 +37,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Cart

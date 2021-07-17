@@ -4,8 +4,25 @@ import Header from "./components/Header"
 import Cart from './pages/Cart'
 import Purchases from './pages/Purchases'
 import { Route } from "react-router-dom"
+import {fetchItems} from "./redux/actions/items"
+import {useDispatch, useSelector} from "react-redux"
+// import {isItemAdded} from "./redux/actions/items"
 
 const App = () => {
+
+    const dispatch = useDispatch()
+
+    const { items } = useSelector( state => state.items)
+    const { items: cartItems}  = useSelector( state => state.cart)
+
+
+
+    React.useEffect(() => {
+        dispatch(fetchItems())
+      //  dispatch(isItemAdded(items, cartItems))
+    }, [])
+
+
   return (
     <div className="App">
         <Header />

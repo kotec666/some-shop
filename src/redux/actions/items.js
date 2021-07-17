@@ -13,7 +13,7 @@ export const fetchItems = () => (dispatch) => {
 
     axios.get(`https://60e6c6ee15387c00173e4921.mockapi.io/items`)
         .then(({ data }) => {
-            dispatch(setItems(data));
+            dispatch(setItems(data))
         })
 }
 
@@ -21,3 +21,11 @@ export const setItems = (items) => ({
     type: 'SET_ITEMS',
     payload: items,
 })
+
+
+// export const isItemAdded = (items, cartItems) => ({
+//    type: 'IS_ITEM_ADDED',
+//    items,
+//    cartItems
+// })
+
