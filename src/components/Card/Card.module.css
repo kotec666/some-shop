@@ -1,0 +1,195 @@
+.cardWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.card {
+    position: relative;
+    width: 210px;
+    height: 260px;
+
+    background: #FFFFFF;
+    border: 1px solid #F3F3F3;
+    box-sizing: border-box;
+    border-radius: 40px;
+    transition: .3s ease-in-out;
+    margin-bottom: 3rem;
+    margin-right: 3.541%;
+}
+
+.card:hover {
+    background: #FFFFFF;
+    border: 1px solid #F8F8F8;
+    box-sizing: border-box;
+    box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 40px;
+    transform: translateY(-10px);
+    transition: .3s ease-in-out;
+}
+
+.removeItem {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 30px;
+    left: 30px;
+
+    background: #FEF0F0;
+    border: 1px solid #ECD5D5;
+    border-radius: 7px;
+    z-index: 1;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.removeItem:hover {
+    border: 3px solid #ECD5D5;
+    transition: .2s ease-in-out;
+}
+
+.removeSpan {
+    display: block;
+    position: absolute;
+    left: 5px;
+
+    border-radius: 2px;
+}
+
+.removeSpanHeader {
+    top: 15px;
+    background: #ECD5D5;
+    border: 1px solid #ECD5D5;
+    width: 20px;
+    height: 1px;
+}
+
+.rtO {
+    transform: rotate(45deg);
+}
+
+.rtT {
+    transform: rotate(-45deg);
+}
+
+.imgBlock {
+    position: absolute;
+    top: 20px;
+    left: 33px;
+    width: 133px;
+    height: 112px;
+}
+
+.imgCard {
+    width: 100%;
+    height: 100%;
+}
+
+.cardTitle {
+    display: block;
+    position: absolute;
+    top: 140px;
+    height: 5px;
+    left: 35px;
+    width: 150px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.cardBottomInfo {
+    position: absolute;
+    top: 185px;
+    left: 35px;
+}
+
+.price {
+
+}
+
+.priceTitle {
+    opacity: .5;
+}
+
+.priceNumber {
+    font-weight: bold;
+}
+
+.plusBtn {
+    cursor: pointer;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 120px;
+    top: 5px;
+
+    background: #FFFFFF;
+    border: 1px solid #F2F2F2;
+    box-sizing: border-box;
+    border-radius: 8px;
+    transition: .3s ease-in-out;
+}
+
+.plusBtn:hover {
+    border: 2px solid #F2F2F2;
+    transition: .3s ease-in-out;
+}
+
+.removeSpanBottom {
+    top: 14px;
+    left: 9px;
+    background: #D3D3D3;
+    border: 1px solid #D3D3D3;
+    width: 10px;
+    height: 1px;
+}
+
+.rtBO {
+    transform: rotate(90deg);
+}
+
+.addedItem {
+    cursor: pointer;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 120px;
+    top: 5px;
+
+    background: #89F09C;
+    border: 1px solid #F2F2F2;
+    box-sizing: border-box;
+    border-radius: 8px;
+    transition: .3s ease-in-out;
+}
+
+.addItem {
+    display: block;
+    position: absolute;
+
+    left: 10px;
+    width: 7px;
+    height: 2px;
+    border-radius: 2px;
+
+    background: #FFFFFF;
+
+    border: 2px solid #FFFFFF;
+}
+
+.rtABO {
+    left: 6px;
+    top: 15px;
+    transform: rotate(45deg);
+}
+
+.rtABT {
+    top: 12px;
+    width: 12px;
+    transform: rotate(-45deg);
+}

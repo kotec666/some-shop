@@ -1,0 +1,56 @@
+.pWrapper {
+    display: flex;
+    margin: 0 auto;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.currentPage {
+
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 67px;
+    height: 31px;
+    font-weight:500;
+    font-size: 33px;
+
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 10px;
+
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    transform: translateY(10px);
+
+}
+
+.leftBtn {
+    transform: translateX(-5px);
+    transition: .3s ease-in-out;
+}
+
+.rightBtn {
+    transform: translateX(5px);
+    transition: .3s ease-in-out;
+}
+
+.leftBtn:hover {
+    transition: .3s ease-in-out;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.rightBtn:hover {
+    transition: .3s ease-in-out;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}

@@ -1,0 +1,49 @@
+.contentWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1600px;
+    flex-direction: column;
+    margin: 0 auto;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 0px 0px 20px 20px;
+    padding: 0 50px 2rem;
+
+
+}
+
+.cardWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.buyBtn {
+    width: 245px;
+    height: 55px;
+    left: 503px;
+    top: 722px;
+
+    background: #9DD458;
+    border-radius: 18px;
+    outline: none;
+    border: none;
+    color: #FFFFFF;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+.buyBtn:hover {
+    transform: translateY(5px);
+    transition: .3s ease-in-out;
+}
