@@ -21,7 +21,7 @@ const Home = () => {
                 <div className={s.cardWrapper}>
                     { role ? <AddItemToBase/> : null}
                     {isLoaded
-                        ? items.map((obj) => (<Card key={obj.id} {...obj} />))
+                        ? items && items.map((obj) => (<Card key={obj.id + obj.title} {...obj} />))
                         : Array(12)
                             .fill(0)
                             .map((_, index) => <Loader key={index} />)}

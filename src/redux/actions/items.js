@@ -23,9 +23,13 @@ export const setItems = (items) => ({
 })
 
 
-// export const isItemAdded = (items, cartItems) => ({
-//    type: 'IS_ITEM_ADDED',
-//    items,
-//    cartItems
-// })
+export const addItem = (obj) => ({
+    type: 'ADD_ITEM_TO_DBASE',
+    payload: obj
+})
+
+export const removeItem = (id) => ({
+    type: 'REMOVE_ITEM_FROM_DBASE',
+    id
+})
 

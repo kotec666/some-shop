@@ -6,6 +6,7 @@ import Purchases from './pages/Purchases'
 import { Route } from "react-router-dom"
 import {fetchItems} from "./redux/actions/items"
 import {useDispatch, useSelector} from "react-redux"
+import {fetchCartItems} from "./redux/actions/cart";
 // import {isItemAdded} from "./redux/actions/items"
 
 const App = () => {
@@ -19,7 +20,7 @@ const App = () => {
 
     React.useEffect(() => {
         dispatch(fetchItems())
-      //  dispatch(isItemAdded(items, cartItems))
+        dispatch(fetchCartItems())
     }, [])
 
 

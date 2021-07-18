@@ -1,19 +1,41 @@
-import React, {useState} from 'react'
+import React from 'react'
 
 import s from './Card.module.css'
-import {useSelector} from "react-redux"
+import {useDispatch, useSelector} from "react-redux"
+import {removeItem, setLoaded} from "../../redux/actions/items"
+import axios from "axios"
 
 
 const Card = ({id, title, imageUrl, price}) => {
 
     const { role } = useSelector( state => state.role)
-    const { isAdded } = useSelector( state => state.cart)
+    const { items: cartItems}  = useSelector( state => state.cart)
+    const dispatch = useDispatch()
+
+
+    const isItemAdded = (id) => {
+        return cartItems.some((obj) => Number(obj.parentId) === Number(id))
+    }
+
+
+
+    const onRemoveFromDBASE = (id, imageUrl, title, price) => {
+        dispatch(removeItem(id))
+        console.log(id, imageUrl, title, price)
+        // try {
+        //     ( async () => {
+        //         await axios.post(`https://60e6c6ee15387c00173e4921.mockapi.io/items`, obj)
+        //     })()
+        // } catch (e) {
+        //     alert('не удалось добавить предмет в базу данных')
+        // }
+    }
 
 
     return (
         <>
                 <div className={s.card}>
-                    {role ? <div className={s.removeItem}>
+                    {role ? <div className={s.removeItem} onClick={() => onRemoveFromDBASE(id, imageUrl, title, price)}>
                         <span className={`${s.removeSpan} ${s.removeSpanHeader} ${s.rtO}`}></span>
                         <span className={`${s.removeSpan} ${s.removeSpanHeader} ${s.rtT}`}></span>
                     </div> : null}
@@ -29,15 +51,21 @@ const Card = ({id, title, imageUrl, price}) => {
                             <div className={s.priceNumber}>{price} руб.</div>
                         </div>
                         {
-                            !isAdded ? <div className={s.plusBtn} >
-                                    <span className={`${s.removeSpan} ${s.removeSpanBottom} ${s.rtBO}`}></span>
-                                    <span className={`${s.removeSpan} ${s.removeSpanBottom}`}></span>
-                                </div> :
-                                <div className={s.addedItem} >
-                                    <span className={`${s.addItem} ${s.rtABO}`}></span>
-                                    <span className={`${s.addItem} ${s.rtABT}`}></span>
-                                </div>
+                            isItemAdded(id)
+                                ?
+                            <div className={s.addedItem} onClick={() => console.log(id)} >
+                                <span className={`${s.addItem} ${s.rtABO}`}></span>
+                                <span className={`${s.addItem} ${s.rtABT}`}></span>
+                            </div>
+                                :
+                            <div className={s.plusBtn} onClick={() => console.log(id)} >
+                                <span className={`${s.removeSpan} ${s.removeSpanBottom} ${s.rtBO}`}></span>
+                                <span className={`${s.removeSpan} ${s.removeSpanBottom}`}></span>
+                            </div>
                         }
+
+
+
                     </div>
                 </div>
     </>

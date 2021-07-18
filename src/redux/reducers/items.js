@@ -1,9 +1,7 @@
 const initialState = {
     items: [],
     isLoaded: false,
-    isAdded: false
 }
-
 
 const items = (state = initialState, action) => {
     switch (action.type) {
@@ -20,15 +18,19 @@ const items = (state = initialState, action) => {
                 isLoaded: action.payload,
             }
 
-        case 'IS_ITEM_ADDED':
+        case 'ADD_ITEM_TO_DBASE':
             return {
                 ...state,
-                isAdded: ''
+                items: [...state.items, action.payload]
             }
+
+        case 'REMOVE_ITEM_FROM_DBASE': {
+            return Object.assign({}, {isLoaded: true, items: state.items.filter(item => item.id !== action.id)})
+        }
 
         default:
             return state
     }
-};
+}
 
 export default items

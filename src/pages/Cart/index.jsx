@@ -9,15 +9,11 @@ import Loader from "../../components/Loader";
 
 
 const Cart = () => {
-    const dispatch = useDispatch()
     const { items: cartItems}  = useSelector( state => state.cart)
     const {isLoaded} = useSelector( state => state.cart)
 
 
 
-    React.useEffect(() => {
-        dispatch(fetchCartItems())
-    }, [])
     return (
         <div>
             <div className={s.contentWrapper}>
