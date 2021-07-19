@@ -5,17 +5,12 @@ import Cart from './pages/Cart'
 import Purchases from './pages/Purchases'
 import { Route } from "react-router-dom"
 import {fetchItems} from "./redux/actions/items"
-import {useDispatch, useSelector} from "react-redux"
+import {useDispatch} from "react-redux"
 import {fetchCartItems} from "./redux/actions/cart";
-// import {isItemAdded} from "./redux/actions/items"
 
 const App = () => {
 
     const dispatch = useDispatch()
-
-    const { items } = useSelector( state => state.items)
-    const { items: cartItems}  = useSelector( state => state.cart)
-
 
 
     React.useEffect(() => {

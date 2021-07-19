@@ -4,9 +4,7 @@ import s from "./Content.module.css"
 import Card from "../../components/Card"
 
 
-
-
-const Home = () => {
+const Purchases = () => {
     return (
         <div>
             <div className={s.contentWrapper}>
@@ -22,4 +20,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Purchases

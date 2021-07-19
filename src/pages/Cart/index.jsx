@@ -2,8 +2,7 @@ import React from 'react'
 
 import s from "./Content.module.css"
 import Card from "../../components/Card"
-import {useDispatch, useSelector} from "react-redux"
-import {fetchCartItems} from "../../redux/actions/cart"
+import {useSelector} from "react-redux"
 import Loader from "../../components/Loader";
 
 

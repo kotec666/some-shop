@@ -2,7 +2,7 @@ import React from 'react'
 
 import s from './Card.module.css'
 import {useDispatch, useSelector} from "react-redux"
-import {removeItem, setLoaded} from "../../redux/actions/items"
+import {removeItem} from "../../redux/actions/items"
 import axios from "axios"
 
 
@@ -19,18 +19,16 @@ const Card = ({id, title, imageUrl, price}) => {
 
 
 
-    const onRemoveFromDBASE = (id, imageUrl, title, price) => {
+    const onRemoveFromDBASE = (id) => {
         dispatch(removeItem(id))
-        console.log(id, imageUrl, title, price)
-        // try {
-        //     ( async () => {
-        //         await axios.post(`https://60e6c6ee15387c00173e4921.mockapi.io/items`, obj)
-        //     })()
-        // } catch (e) {
-        //     alert('не удалось добавить предмет в базу данных')
-        // }
+         try {
+             ( async () => {
+                 await axios.delete(`https://60e6c6ee15387c00173e4921.mockapi.io/items/${id}`)
+            })()
+         } catch (e) {
+             alert('не удалить предмет из бд')
+         }
     }
-
 
     return (
         <>
